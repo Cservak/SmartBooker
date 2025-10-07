@@ -26,14 +26,9 @@ const Login = () => {
 
         try {
             await authService.login(formData.email, formData.password);
-            console.log(formData.email)
-            console.log(formData.password)
             navigate('/');
         } catch (err) {
             setError(err.message);
-            console.log("error")
-            console.log("error", formData.email)
-            console.log("error", formData.password)
         } finally {
             setLoading(false);
         }
